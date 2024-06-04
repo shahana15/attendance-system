@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import s from "./log-in.module.css";
 import axios from "axios";
 function LogIn() {
 	const [username, setUserName] = useState("");
 	const [password, setPassword] = useState("");
+
+	useEffect(() => {
+		if (localStorage.getItem("token")) {
+			window.location.href = "/home";
+		}
+	}, []);
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
