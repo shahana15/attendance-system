@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import s from "./home.module.css";
 
 const handleLogout = () => {
+	localStorage.removeItem("token");
+	window.location.href = "/";
 }
 
 const Home = () => {
