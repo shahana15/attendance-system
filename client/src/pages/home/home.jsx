@@ -7,6 +7,12 @@ const handleLogout = () => {
 }
 
 const Home = () => {
+	useEffect(() => {
+		if (!localStorage.getItem("token")) {
+			window.location.href = "/";
+		}
+	}, []);
+
 	return (
 		<div className={s.home}>
 			<div className={s.welcome_box}>
